@@ -1,6 +1,5 @@
-import numpy as np
-import time
 import cv2
+import numpy as np
 
 
 # peut etre une video ou un flux par exemple http://192.168.1.189/video.mjpg
@@ -20,8 +19,7 @@ W = None
 LABELS = open(LABELS_FILE).read().strip().split("\n")
 
 np.random.seed(4)
-COLORS = np.random.randint(0, 255, size=(len(LABELS), 3),
-                           dtype="uint8")
+COLORS = np.random.randint(0, 255, size=(len(LABELS), 3), dtype="uint8")
 
 
 net = cv2.dnn.readNetFromDarknet(CONFIG_FILE, WEIGHTS_FILE)
@@ -36,7 +34,7 @@ cnt = 0
 SKIP = 20
 while True:
     cnt += 1
-    if cnt % SKIP != 0 :
+    if cnt % SKIP != 0:
         continue
     print("Frame number", cnt)
     try:

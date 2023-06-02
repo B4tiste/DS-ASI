@@ -9,29 +9,38 @@
     <body>
         <div class="container">
             <h1>Video</h1>
-            <div class="video-container">
-                <!-- Ajoutez un élément de texte pour le message de chargement -->
-                <p id="loading-text">Chargement de la vidéo...</p>
-                <img id="video-stream" src="" />
-            </div>
+            <a href="/detections">Detections</a>
         </div>
         <script>
-            // Fonction pour charger le flux vidéo dans la balise <img>
-            function loadVideoStream() {
-                var video = document.getElementById("video-stream");
-                video.src = "{{ url_for('video_stream_file') }}";
+            // // Fonction pour charger le flux vidéo dans la balise <img>
+            // function loadVideoStream() {
+            //     var video = document.getElementById("video-stream");
+            //     video.src = "{{ url_for('video_stream_file') }}";
 
-                // Ajoutez un écouteur d'événements pour cacher le texte de chargement une fois la vidéo chargée
-                video.addEventListener("load", function () {
-                    var loadingText = document.getElementById("loading-text");
-                    loadingText.style.display = "none";
-                });
-            }
+            //     // Ajoutez un écouteur d'événements pour cacher le texte de chargement une fois la vidéo chargée
+            //     video.addEventListener("load", function () {
+            //         var loadingText = document.getElementById("loading-text-1");
+            //         loadingText.style.display = "none";
+            //     });
+            // }
 
-            // Charger le flux vidéo et exécuter la fonction de test lorsque la page est chargée
-            window.addEventListener("load", function () {
-                loadVideoStream();
-            });
+            // // Fonction pour charger le flux video traité dans la balise <img>
+            // function loadProcessedVideoStream() {
+            //     var video = document.getElementById("video-stream-processed");
+            //     video.src = "{{ url_for('video_stream_file_processed') }}";
+
+            //     // Ajoutez un écouteur d'événements pour cacher le texte de chargement une fois la vidéo chargée
+            //     video.addEventListener("load", function () {
+            //         var loadingText = document.getElementById("loading-text-2");
+            //         loadingText.style.display = "none";
+            //     });
+            // }
+
+            // // Charger le flux vidéo et exécuter la fonction de test lorsque la page est chargée
+            // window.addEventListener("load", function () {
+            //     loadVideoStream();
+            //     loadProcessedVideoStream();
+            // });
         </script>
     </body>
 </html>
